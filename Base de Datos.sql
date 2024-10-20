@@ -9,6 +9,10 @@ CREATE TABLE Alumno (
     direccion VARCHAR(255)
 );
 
+ALTER TABLE Alumno
+ADD contrasena VARCHAR(255),
+ADD CONSTRAINT unique_email UNIQUE (email);
+
 CREATE TABLE Pago (
     id_pago INT PRIMARY KEY AUTO_INCREMENT,
     fecha_pago DATE,
