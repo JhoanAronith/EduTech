@@ -72,7 +72,7 @@
                             <div class="card p-4 shadow-lg" style="border-radius: 1rem;">
                                 <h3 class="mb-4 text-center">Registro en EduTech</h3>
                                 <!-- Formulario de registro -->
-                                <form th:object="${alumno}" th:action="@{/registro}" method="post">
+                                <form method="post">
                                     <!-- Nombre Completo -->
                                     <div class="mb-3">
                                         <label class="form-label" for="name">Nombre Completo</label>
@@ -80,7 +80,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-user"></i>
                                             </span>
-                                            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Nombre completo" required/>
+                                            <input type="text" class="form-control" placeholder="Nombre completo" required/>
                                         </div>
                                     </div>
                                     <!-- Apellido -->
@@ -90,7 +90,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-user"></i>
                                             </span>
-                                            <input type="text" th:field="*{apellido}" class="form-control" placeholder="Apellido" required/>
+                                            <input type="text" class="form-control" placeholder="Apellido" required/>
                                         </div>
                                     </div>
                                     <!-- Correo Electrónico -->
