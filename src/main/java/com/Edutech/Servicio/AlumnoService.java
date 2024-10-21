@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.Edutech.Servicio;
 
-/**
- *
- * @author Jhoan Muñoz
- */
+import com.Edutech.Modelo.Alumno;
+import java.util.List;
+
 public interface AlumnoService {
+    
+    public List<Alumno> get();
+    public Alumno get(int id_alumno);
+    public void save(Alumno alumno);
+    public void update(Alumno alumno);
+    public void delete(int id_alumno);
+    
     
 }
