@@ -21,10 +21,10 @@ public class Controlador_Principal {
         return "login";
     }
     
-    @GetMapping("/registro-edutech")
-    public String Registro(Model modelo) {
-        return ("registro");
-    }
+//    @GetMapping("/registro-edutech")
+//    public String Registro(Model modelo) {
+//        return ("registro");
+//    }
     
     @GetMapping("/perfil-edutech")
     public String Perfil(Model modelo) {
