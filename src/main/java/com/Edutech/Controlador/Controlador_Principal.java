@@ -51,9 +51,9 @@ public class Controlador_Principal {
         return ("certificaciones");
     }
     
-    @GetMapping("/categorias-edutech")
-    public String Categorias(Model modelo) {
-        return ("categorias");
+    @GetMapping("/admin-edutech")
+    public String Admnistrador(Model modelo) {
+        return ("administrador");
     }
     
 }

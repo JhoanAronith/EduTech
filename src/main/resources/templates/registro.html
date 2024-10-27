@@ -62,9 +62,6 @@
                         <div class="col-12 col-md-8 col-lg-6 col-xl-4">
                             <div class="card p-4 shadow-lg" style="border-radius: 1rem;">
                                 <h3 class="mb-4 text-center">Registro en EduTech</h3>
-                                
-                                
-                                
                                 <!-- Formulario de registro -->
                                 <form role="form" th:action="@{/guardarAlumno}" th:object="${alumno}">
                                     <!-- Nombre Completo -->
@@ -75,8 +72,11 @@
                                                 <i class="fas fa-user"></i>
                                             </span>
                                             <input type="text" th:field="*{nombre}" class="form-control" placeholder="Nombre completo" required/>
+                                            
                                         </div>
+                                        <small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></small>
                                     </div>
+                                    
                                     <!-- Apellido -->
                                     <div class="mb-3">
                                         <label class="form-label" for="apellido">Apellido</label>
@@ -86,6 +86,7 @@
                                             </span>
                                             <input type="text" th:field="*{apellido}" class="form-control" placeholder="Apellido" required/>
                                         </div>
+                                        <div th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="text-danger"></div>
                                     </div>
                                     <!-- Correo Electrónico -->
                                     <div class="mb-3">
@@ -96,6 +97,7 @@
                                             </span>
                                             <input type="email" th:field="*{email}" id="email" class="form-control" placeholder="Correo electrónico" required/>
                                         </div>
+                                        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></div>
                                     </div>
                                     <!-- Teléfono -->
                                     <div class="mb-3">
@@ -106,6 +108,7 @@
                                             </span>
                                             <input type="tel" th:field="*{telefono}" id="telefono" class="form-control" placeholder="Teléfono" required/>
                                         </div>
+                                        <div th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}" class="text-danger"></div>
                                     </div>
                                     <!-- Dirección -->
                                     <div class="mb-3">
@@ -116,6 +119,7 @@
                                             </span>
                                             <input type="text" th:field="*{direccion}" id="direccion" class="form-control" placeholder="Dirección" required/>
                                         </div>
+                                        <div th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" class="text-danger"></div>
                                     </div>
                                     <!-- Contraseña -->
                                     <div class="mb-3">
@@ -126,6 +130,7 @@
                                             </span>
                                             <input type="password" th:field="*{contrasena}" id="password" class="form-control" placeholder="Contraseña" required/>
                                         </div>
+                                        <div th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></div>
                                     </div>
                                     <!-- Botón de Registro -->
                                     <button class="btn btn-primary w-100" type="submit">Continuar</button>

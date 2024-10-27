@@ -11,28 +11,29 @@ public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_alumno;
-    @NotBlank(message = "El nombre es obligatorio.")
+    @Column(nullable = false)
+    @NotEmpty(message = "El nombre es obligatorio.")
     @Size(max = 100)
-    @Column
     private String nombre;
-    @NotBlank(message = "El apellido es obligatorio.")
+    @NotEmpty(message = "El apellido es obligatorio.")
     @Size(max = 100)
-    @Column
+    @Column(nullable = false)
     private String apellido;
-    @NotBlank(message = "El correo electrónico es obligatorio.")
+    @NotEmpty(message = "El correo electrónico es obligatorio.")
     @Size(max = 100)
     @Email
-    @Column
+    @Column(nullable = false)
     private String email;
+    @NotEmpty(message = "El telefono es obligatorio.")
     @Size(max = 15)
-    @Column
+    @Column(nullable = false)
     private String telefono;
     @Size(max = 255)
-    @Column
+    @Column(nullable = false)
     private String direccion;
-    @NotBlank(message = "La contraseña es obligatoria")
+    @NotEmpty(message = "La contraseña es obligatoria")
     @Size(min = 8, max = 255)
-    @Column
+    @Column(nullable = false)
     private String contrasena;
     @OneToMany(mappedBy = "alumno", cascade = CascadeType.ALL)
     private List<Pago> pagos;
