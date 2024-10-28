@@ -12,23 +12,24 @@ public class Alumno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_alumno;
     @Column(nullable = false)
-    @NotEmpty(message = "El nombre es obligatorio.")
+    @NotEmpty(message = "Ingrese su nombre.")
     @Size(max = 100)
     private String nombre;
-    @NotEmpty(message = "El apellido es obligatorio.")
+    @NotEmpty(message = "Ingrese su apellido.")
     @Size(max = 100)
     @Column(nullable = false)
     private String apellido;
-    @NotEmpty(message = "El correo electrónico es obligatorio.")
+    @NotEmpty(message = "Ingrese su correo electrónico.")
     @Size(max = 100)
     @Email
-    @Column(nullable = false)
+    @Column(unique = true)
     private String email;
-    @NotEmpty(message = "El telefono es obligatorio.")
+    @NotEmpty(message = "Ingrese su número de teléfono")
     @Size(max = 15)
     @Column(nullable = false)
     private String telefono;
-    @Size(max = 255)
+    @NotEmpty(message = "Ingrese su dirección.")
+    @Size(min = 8, max = 255)
     @Column(nullable = false)
     private String direccion;
     @NotEmpty(message = "La contraseña es obligatoria")

@@ -27,11 +27,11 @@ public class AlumnoController {
         return "registro";
     }
     
-    @GetMapping("/guardarAlumno")
+    @PostMapping("/guardarAlumno")
     public String guardarEmp(@Valid @ModelAttribute("alumno") Alumno alumno, BindingResult result, Model modelo) {
         if (result.hasErrors()) {
-            modelo.addAttribute("alumno", alumno); // Asegura que el objeto se mantenga en caso de error
-            return "registro"; // Cambia a la vista correcta
+            modelo.addAttribute("alumno", alumno); 
+            return "registro";
         }
         alumnoService.save(alumno);
         return "redirect:/pago-edutech";

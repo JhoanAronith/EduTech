@@ -63,7 +63,7 @@
                             <div class="card p-4 shadow-lg" style="border-radius: 1rem;">
                                 <h3 class="mb-4 text-center">Registro en EduTech</h3>
                                 <!-- Formulario de registro -->
-                                <form role="form" th:action="@{/guardarAlumno}" th:object="${alumno}">
+                                <form role="form" th:action="@{/guardarAlumno}" th:object="${alumno}" method="POST">
                                     <!-- Nombre Completo -->
                                     <div class="mb-3">
                                         <label class="form-label" for="name">Nombre Completo</label>
@@ -71,7 +71,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-user"></i>
                                             </span>
-                                            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Nombre completo" required/>
+                                            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Nombre completo"/>
                                             
                                         </div>
                                         <small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></small>
@@ -84,7 +84,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-user"></i>
                                             </span>
-                                            <input type="text" th:field="*{apellido}" class="form-control" placeholder="Apellido" required/>
+                                            <input type="text" th:field="*{apellido}" class="form-control" placeholder="Apellido"/>
                                         </div>
                                         <div th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="text-danger"></div>
                                     </div>
@@ -95,7 +95,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-envelope"></i>
                                             </span>
-                                            <input type="email" th:field="*{email}" id="email" class="form-control" placeholder="Correo electrónico" required/>
+                                            <input type="email" th:field="*{email}" id="email" class="form-control" placeholder="Correo electrónico"/>
                                         </div>
                                         <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></div>
                                     </div>
@@ -106,7 +106,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-phone"></i>
                                             </span>
-                                            <input type="tel" th:field="*{telefono}" id="telefono" class="form-control" placeholder="Teléfono" required/>
+                                            <input type="tel" th:field="*{telefono}" id="telefono" class="form-control" placeholder="Teléfono"/>
                                         </div>
                                         <div th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}" class="text-danger"></div>
                                     </div>
@@ -117,7 +117,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-address-card"></i>
                                             </span>
-                                            <input type="text" th:field="*{direccion}" id="direccion" class="form-control" placeholder="Dirección" required/>
+                                            <input type="text" th:field="*{direccion}" id="direccion" class="form-control" placeholder="Dirección"/>
                                         </div>
                                         <div th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" class="text-danger"></div>
                                     </div>
@@ -128,7 +128,7 @@
                                             <span class="input-group-text">
                                                 <i class="fas fa-lock"></i>
                                             </span>
-                                            <input type="password" th:field="*{contrasena}" id="password" class="form-control" placeholder="Contraseña" required/>
+                                            <input type="password" th:field="*{contrasena}" id="password" class="form-control" placeholder="Contraseña"/>
                                         </div>
                                         <div th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></div>
                                     </div>
