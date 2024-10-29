@@ -34,18 +34,17 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
-                            <th>Contraseña</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan Pérez</td>
-                            <td>juan@gmail.com</td>
-                            <td>123456</td>
+                        <tr th:each="estado : ${lista}" >
+                            <td th:text="${estado.id_administrador}"></td>
+                            <td th:text="${estado.nombre}"></td>
+                            <td th:text="${estado.email}"></td>
                             <td>
-                                <a class="btn btn-danger">Eliminar</a>
+                                <a class="btn btn-danger"
+                                   th:href="@{/admin-edutech/administradores/eliminar/{id}(id=${estado.id_administrador})}">Eliminar</a>
                                 <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal">Editar</a>
                             </td>
                         </tr>
@@ -63,20 +62,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="formAgregarAdmin" action="/AdminController" method="POST">
+                        <form role="form" th:action="@{/guardarAdministrador}" th:object="${admin}" method="POST">
                             <div class="mb-3">
                                 <label for="agregarNombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="agregarNombre" name="name" required>
+                                <input type="text" th:field="*{nombre}" class="form-control" id="agregarNombre" required>
                             </div>
                             <div class="mb-3">
                                 <label for="agregarCorreo" class="form-label">Correo</label>
-                                <input type="email" class="form-control" id="agregarCorreo" name="email" required>
+                                <input type="email" class="form-control" th:field="*{email}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="agregarContrasena" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="agregarContrasena" name="password" required>
+                                <input type="password" class="form-control" th:field="*{contrasena}" name="password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary" name="action" value="register">Agregar
+                            <button type="submit" class="btn btn-primary">Agregar
                                 Administrador</button>
                         </form>
                     </div>
