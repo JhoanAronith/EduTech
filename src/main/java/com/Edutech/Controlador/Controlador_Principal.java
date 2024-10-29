@@ -21,11 +21,6 @@ public class Controlador_Principal {
         return "login";
     }
     
-//    @GetMapping("/registro-edutech")
-//    public String Registro(Model modelo) {
-//        return ("registro");
-//    }
-    
     @GetMapping("/perfil-edutech")
     public String Perfil(Model modelo) {
         return ("perfil");
@@ -52,8 +47,38 @@ public class Controlador_Principal {
     }
     
     @GetMapping("/admin-edutech")
-    public String Admnistrador(Model modelo) {
-        return ("administrador");
+    public String Admistrador(Model modelo) {
+        return ("/admin/inicio");
+    }
+    
+    @GetMapping("/admin-edutech/usuarios")
+    public String AdminAlumnos(Model modelo) {
+        return ("/admin/usuarios");
+    }
+    
+    @GetMapping("/admin-edutech/cursos")
+    public String AdminCursos(Model modelo) {
+        return ("/admin/cursos");
+    }
+    
+    @GetMapping("/admin-edutech/nuevoCurso")
+    public String AdminNuevoCurso(Model modelo) {
+        return ("/admin/nuevoCurso");
+    }
+    
+    @GetMapping("/admin-edutech/administradores")
+    public String AdminAdministradores(Model modelo) {
+        return ("/admin/administradores");
+    }
+    
+    @GetMapping("/admin-edutech/dashboard")
+    public String AdminDashboard(Model modelo) {
+        return ("/admin/dashboard");
+    }
+    
+    @GetMapping("/admin-edutech/inscripciones")
+    public String AdminInscripciones(Model modelo) {
+        return ("/admin/inscripciones");
     }
     
 }
