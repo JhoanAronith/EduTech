@@ -26,15 +26,27 @@ public class AlumnoController {
         modelo.addAttribute("alumno", alumno);
         return "registro";
     }
-    
+
     @PostMapping("/guardarAlumno")
     public String guardarEmp(@Valid @ModelAttribute("alumno") Alumno alumno, BindingResult result, Model modelo) {
         if (result.hasErrors()) {
-            modelo.addAttribute("alumno", alumno); 
+            modelo.addAttribute("alumno", alumno);
             return "registro";
         }
         alumnoService.save(alumno);
         return "redirect:/pago-edutech";
+    }
+
+    @GetMapping("/admin-edutech/usuarios")
+    public String get(Model modelo) {
+        modelo.addAttribute("lista", alumnoService.get());
+        return "/admin/usuarios";
+    }
+
+    @GetMapping("/admin-edutech/usuarios/eliminar/{id}")
+    public String eliminarAlumno(@PathVariable Integer id) {
+        alumnoService.delete(id);
+        return "redirect:/admin-edutech/usuarios"; // Redirige para actualizar la lista
     }
 
 }

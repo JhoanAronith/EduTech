@@ -51,10 +51,10 @@ public class Controlador_Principal {
         return ("/admin/inicio");
     }
     
-    @GetMapping("/admin-edutech/usuarios")
-    public String AdminAlumnos(Model modelo) {
-        return ("/admin/usuarios");
-    }
+//    @GetMapping("/admin-edutech/usuarios")
+//    public String AdminAlumnos(Model modelo) {
+//        return ("/admin/usuarios");
+//    }
     
     @GetMapping("/admin-edutech/cursos")
     public String AdminCursos(Model modelo) {

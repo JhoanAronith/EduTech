@@ -17,7 +17,7 @@ public class AlumnoDAOImpl implements AlumnoDAO {
     @Override
     public List<Alumno> get() {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<Alumno> query = currentSession.createQuery("from Alumno order by name", Alumno.class);
+        Query<Alumno> query = currentSession.createQuery("from Alumno", Alumno.class);
         List<Alumno> list = query.getResultList();
         return list;
     }
