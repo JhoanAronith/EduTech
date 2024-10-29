@@ -2,7 +2,6 @@ package com.Edutech.Modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -13,33 +12,43 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_curso;
 
-    @NotBlank
-    @Size(max = 100)
-    private String nombre;
+    @NotEmpty(message = "Ingrese el título del curso.")
+    @Size(max = 255)
+    @Column(nullable = false)
+    private String titulo;
 
-    @Lob
+    @NotNull(message = "La duración es obligatoria.")
+    private Integer duracion;
+
+    @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    @NotNull
+    @NotEmpty(message = "Ingrese la categoría del curso.")
+    @Size(max = 100)
+    @Column(nullable = false)
+    private String categoria;
+
+    @NotEmpty(message = "Ingrese el nivel del curso.")
+    @Size(max = 50)
+    @Column(nullable = false)
+    private String nivel;
+
     @ManyToOne
-    @JoinColumn(name = "categoria_id", nullable = false)
-    private Categoria categoria;
+    @JoinColumn(name = "certificacion_id")
+    private Certificacion certificacion;
 
-    @NotNull
-    private LocalDate fecha_inicio;
-
-    private LocalDate fecha_fin;
-
-    @ManyToOne
-    @JoinColumn(name = "administrador_id", nullable = false)
-    private Administrador administrador;
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+    private List<Modulo> modulos;
 
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
     private List<Examen> examenes;
 
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+    private List<RegistroCurso> registros;
+
     public Curso() {
     }
-    
+
     public Integer getId_curso() {
         return id_curso;
     }
@@ -48,12 +57,20 @@ public class Curso {
         this.id_curso = id_curso;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Integer getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(Integer duracion) {
+        this.duracion = duracion;
     }
 
     public String getDescripcion() {
@@ -64,36 +81,36 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public LocalDate getFecha_inicio() {
-        return fecha_inicio;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setFecha_inicio(LocalDate fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
-    public LocalDate getFecha_fin() {
-        return fecha_fin;
+    public Certificacion getCertificacion() {
+        return certificacion;
     }
 
-    public void setFecha_fin(LocalDate fecha_fin) {
-        this.fecha_fin = fecha_fin;
+    public void setCertificacion(Certificacion certificacion) {
+        this.certificacion = certificacion;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
+    public List<Modulo> getModulos() {
+        return modulos;
     }
 
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
+    public void setModulos(List<Modulo> modulos) {
+        this.modulos = modulos;
     }
 
     public List<Examen> getExamenes() {
@@ -103,5 +120,15 @@ public class Curso {
     public void setExamenes(List<Examen> examenes) {
         this.examenes = examenes;
     }
+
+    public List<RegistroCurso> getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(List<RegistroCurso> registros) {
+        this.registros = registros;
+    }
+    
+    
     
 }

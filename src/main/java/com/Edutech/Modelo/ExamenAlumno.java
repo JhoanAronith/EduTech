@@ -1,19 +1,15 @@
 package com.Edutech.Modelo;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="examenAlumno")
+@Table(name = "examen_alumno")
 public class ExamenAlumno {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_examen_alumno;
-
-    @DecimalMin(value = "0.0", inclusive = false)
-    private BigDecimal nota;
 
     @ManyToOne
     @JoinColumn(name = "examen_id", nullable = false)
@@ -22,6 +18,8 @@ public class ExamenAlumno {
     @ManyToOne
     @JoinColumn(name = "alumno_id", nullable = false)
     private Alumno alumno;
+
+    private BigDecimal nota;
 
     public ExamenAlumno() {
     }
@@ -32,14 +30,6 @@ public class ExamenAlumno {
 
     public void setId_examen_alumno(Integer id_examen_alumno) {
         this.id_examen_alumno = id_examen_alumno;
-    }
-
-    public BigDecimal getNota() {
-        return nota;
-    }
-
-    public void setNota(BigDecimal nota) {
-        this.nota = nota;
     }
 
     public Examen getExamen() {
@@ -58,7 +48,15 @@ public class ExamenAlumno {
         this.alumno = alumno;
     }
 
+    public BigDecimal getNota() {
+        return nota;
+    }
+
+    public void setNota(BigDecimal nota) {
+        this.nota = nota;
+    }
     
     
     
 }
+

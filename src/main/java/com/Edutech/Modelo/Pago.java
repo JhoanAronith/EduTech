@@ -3,7 +3,6 @@ package com.Edutech.Modelo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "pago")
@@ -13,13 +12,10 @@ public class Pago {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_pago;
 
-    @NotNull
-    private LocalDate fecha_pago;
-
-    @NotNull
-    @DecimalMin(value = "0.0", inclusive = false)
+    @NotNull(message = "El monto es obligatorio.")
     private BigDecimal monto;
 
+    @NotEmpty(message = "Ingrese el método de pago.")
     @Size(max = 50)
     private String metodo_pago;
 
@@ -29,21 +25,13 @@ public class Pago {
 
     public Pago() {
     }
-    
+
     public Integer getId_pago() {
         return id_pago;
     }
 
     public void setId_pago(Integer id_pago) {
         this.id_pago = id_pago;
-    }
-
-    public LocalDate getFecha_pago() {
-        return fecha_pago;
-    }
-
-    public void setFecha_pago(LocalDate fecha_pago) {
-        this.fecha_pago = fecha_pago;
     }
 
     public BigDecimal getMonto() {
@@ -69,5 +57,7 @@ public class Pago {
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }
-
+    
+    
+    
 }

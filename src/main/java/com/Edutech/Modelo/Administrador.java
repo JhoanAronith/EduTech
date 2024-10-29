@@ -2,35 +2,34 @@ package com.Edutech.Modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import java.util.List;
 
 @Entity
-@Table(name="administrador")
+@Table(name = "administrador")
 public class Administrador {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_administrador;
 
-    @NotBlank
+    @NotEmpty(message = "Ingrese su nombre.")
     @Size(max = 100)
+    @Column(nullable = false)
     private String nombre;
 
-    @NotBlank
-    @Email
+    @NotEmpty(message = "Ingrese su correo electrónico.")
     @Size(max = 100)
+    @Email
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @NotBlank
+    @NotEmpty(message = "La contraseña es obligatoria.")
     @Size(min = 8, max = 255)
+    @Column(nullable = false)
     private String contrasena;
-
-    @OneToMany(mappedBy = "administrador", cascade = CascadeType.ALL)
-    private List<Curso> cursos;
 
     public Administrador() {
     }
-    
+
     public Integer getId_administrador() {
         return id_administrador;
     }
@@ -62,13 +61,7 @@ public class Administrador {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-
-    public List<Curso> getCursos() {
-        return cursos;
-    }
-
-    public void setCursos(List<Curso> cursos) {
-        this.cursos = cursos;
-    }
+    
+    
     
 }

@@ -45,9 +45,6 @@ public class Alumno {
     @OneToMany(mappedBy = "alumno", cascade = CascadeType.ALL)
     private List<ExamenAlumno> examenes;
 
-    @OneToMany(mappedBy = "alumno", cascade = CascadeType.ALL)
-    private List<Certificacion> certificaciones;
-
     public Alumno() {
 
     }
@@ -131,15 +128,5 @@ public class Alumno {
     public void setExamenes(List<ExamenAlumno> examenes) {
         this.examenes = examenes;
     }
-
-    public List<Certificacion> getCertificaciones() {
-        return certificaciones;
-    }
-
-    public void setCertificaciones(List<Certificacion> certificaciones) {
-        this.certificaciones = certificaciones;
-    }
-
-   
 
 }

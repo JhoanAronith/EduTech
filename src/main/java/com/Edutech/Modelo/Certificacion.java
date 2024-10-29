@@ -2,33 +2,26 @@ package com.Edutech.Modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table(name="certificacion")
+@Table(name = "certificacion")
 public class Certificacion {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_certificacion;
 
-    @NotBlank
+    @NotEmpty(message = "Ingrese el nombre de la certificación.")
     @Size(max = 100)
+    @Column(nullable = false)
     private String nombre;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    @NotNull
-    private LocalDate fecha_emision;
-
-    @ManyToOne
-    @JoinColumn(name = "alumno_id", nullable = false)
-    private Alumno alumno;
-
-    @ManyToOne
-    @JoinColumn(name = "curso_id", nullable = false)
-    private Curso curso;
+    @OneToMany(mappedBy = "certificacion", cascade = CascadeType.ALL)
+    private List<Curso> cursos;
 
     public Certificacion() {
     }
@@ -57,30 +50,13 @@ public class Certificacion {
         this.descripcion = descripcion;
     }
 
-    public LocalDate getFecha_emision() {
-        return fecha_emision;
+    public List<Curso> getCursos() {
+        return cursos;
     }
 
-    public void setFecha_emision(LocalDate fecha_emision) {
-        this.fecha_emision = fecha_emision;
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
-
-    public Alumno getAlumno() {
-        return alumno;
-    }
-
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-    
     
     
 }
