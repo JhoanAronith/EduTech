@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edutech - Curso</title>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Link Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="css/curso.css">
+</head>
+
+<body>
+
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg bg-light shadow-sm">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="inicio.html">
+                    <img src="img/logo-header-edutech.png" alt="Logo" height="50">
+                </a>
+                <!-- Menu Responsivo -->
+                <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Contenido -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Enlaces -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Programación</a></li>
+                                <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                <li><a class="dropdown-item" href="#">Diseño Gráfico</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="categorias.html">Ver todo</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                    <!-- Buscar -->
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    <!-- Icono de Usuario -->
+                    <a class="nav-icon text-primary ms-3" href="login.html">
+                        <i class="fa fa-user fa-lg"></i>
+                    </a>
+                    <!--Icono inciar sesion-->
+                    <a class="nav-icon text-primary ms-3" href="login.html">
+                        <i class="fa fa-right-to-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Main-->
+    <main class="container y-5 mt-3">
+        <div class="row">
+            <h2 class="text-primary">Curso Python - Básico</h2>
+            <div class="col-md-5 mt-3">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Programación en Python Básico: Sesión 1
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Uso de Google Drive y una introducción a Python</span>
+                                        <button class="btn btn-primary"
+                                            onclick="mostrarVideo('https://www.youtube.com/embed/-AdtnEVIH98?si=XUMh61Py7VQIKBQg')"
+                                            title="Visualizar video Variables">Visualizar video</button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Programación en Python Básico: Sesión 2
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Primeros pasos usando Python</span>
+                                        <button class="btn btn-primary"
+                                            onclick="mostrarVideo('https://www.youtube.com/embed/apGmgKBUMvU?si=OuYLBaeUwBIyk4yE')"
+                                            title="Visualizar video Variables">Visualizar video</button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                Programación en Python Básico: Sesión 3
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Rutinas de entrada y salida en Python</span>
+                                        <button class="btn btn-primary"
+                                            onclick="mostrarVideo('https://www.youtube.com/embed/2hoC1GCI5FU?si=Jn5iE9zDcXYng5xG')"
+                                            title="Visualizar video Variables">Visualizar video</button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                                Programación en Python Básico: Sesión 4
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Dos estructuras básicas: Desición y Repitición</span>
+                                        <button class="btn btn-primary"
+                                            onclick="mostrarVideo('https://www.youtube.com/embed/IyvvHpomTKo?si=PQbhR2r4Ok8FGkbe')"
+                                            title="Visualizar video Variables">Visualizar video</button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFive">
+                                Programación en Python Básico: Sesión 5
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Datos estructurados en Python</span>
+                                        <button class="btn btn-primary"
+                                            onclick="mostrarVideo('https://www.youtube.com/embed/F_hkrOzjVlo?si=ps6YjWZAwpyQC_cw')"
+                                            title="Visualizar video Variables">Visualizar video</button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseSix">
+                                Examen Final
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="list-group">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="https://forms.office.com/r/sGCrubHy3B">Rendir examen final</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h3>Video tutorial</h3>
+                <div class="videoSection">
+                    <iframe id="videoFrame" width="100%" height="400"
+                        src="https://www.youtube.com/embed/-AdtnEVIH98?si=XUMh61Py7VQIKBQg" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container mt-4">
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="descripcion-tab" data-bs-toggle="tab" data-bs-target="#descripcion"
+                        type="button" role="tab" aria-controls="descripcion" aria-selected="false">Descripción del
+                        curso</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="material-tab" data-bs-toggle="tab" data-bs-target="#material"
+                        type="button" role="tab" aria-controls="material" aria-selected="false">Material de
+                        estudio</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="anuncios-tab" data-bs-toggle="tab" data-bs-target="#anuncios"
+                        type="button" role="tab" aria-controls="anuncios" aria-selected="false">Anuncios</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="valoracion-tab" data-bs-toggle="tab" data-bs-target="#valoracion"
+                        type="button" role="tab" aria-controls="valoracion" aria-selected="false">Valoración</button>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-3" id="nyTabContent">
+                <div class="tab-pane fade show active" id="descripcion" role="tabpanel"
+                    aria-labelledby="descripcion-tab">
+                    <h3>Descripción del curso</h3>
+                    <p>
+                        Python es un lenguaje de programación de alto nivel, interpretado y de propósito general,
+                        conocido por su sintaxis simple y legible, lo que facilita su aprendizaje y uso.
+                        Fue creado por Guido van Rossum y lanzado por primera vez en 1991.
+                        Python es popular por su versatilidad y se utiliza en una variedad de aplicaciones, desde
+                        desarrollo web, análisis de datos, inteligencia artificial, automatización de tareas hasta
+                        creación de scripts.
+                    </p>
+                    <hr>
+                    <h3>Docente</h3>
+                    <p><strong> Abraham Zamudio Chauca</strong></p>
+                    <p>Egresado de la carrera de Matemática de la Universidad
+                        Nacional de Ingeniería con experiencia en la construcción de
+                        sistemas de procesamiento distribuido, despliegue de
+                        soluciones informáticas en entornos Linux y desarrollo de
+                        software usando técnicas de machine learning y deep
+                        learning para entornos comerciales y de investigación.</p>
+                    <hr>
+                    <h3>Temario</h3>
+                    <h4>Sesión 1</h4>
+                    <ul>
+                        <li>Primeros pasos usando Google Drive</li>
+                        <li>Desarrollo y evolución de los lenguajes de programación.</li>
+                        <li>Introducción al lenguaje de programación Python</li>
+                    </ul>
+                    <h4>Sesión 2</h4>
+                    <ul>
+                        <li>Definición y operaciones con variables numéricas</li>
+                        <li>Definición y operaciones con variables de tipo cadena de caracter</li>
+                        <li>Definición y operaciones con variables lógicas</li>
+                    </ul>
+                    <h4>Sesión 3</h4>
+                    <ul>
+                        <li>La función input para pedirle datos al usuario</li>
+                        <li>La función print para devolver informacion al usuario</li>
+                    </ul>
+                    <h4>Sesión 4</h4>
+                    <ul>
+                        <li>Toma de decisiones en Python : La estructura IF</li>
+                        <li>Realización de tareas repetitivas en Python : Estructuras FOR y WHILE</li>
+                    </ul>
+                    <h4>Sesión 5</h4>
+                    <ul>
+                        <li>Definición del tipo de dato : lista</li>
+                        <li>Operaciones básicas con listas</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="material" role="tabpanel" aria-labelledby="material-tab">
+                    <h3>Material de estudio</h3>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Lecturas
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><a href="Archivos/Algoritmos y estructuras de datos en Python.pdf"
+                                                download>Algoritmos y estructuras de datos en Python.pdf</a></li>
+                                        <li><a href="Archivos/Aprende Python - Sergio Delgado Quintero - 2024.pdf"
+                                                download>Aprende Python - Sergio Delgado Quintero.pdf</a></li>
+                                        <li><a href="Archivos/Matemáticas y programación con Python para ingenierías - Aguilera - 2021.pdf"
+                                                download>Matemáticas y programación con Python para ingenierías</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    Sesión 1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <a href="Archivos/Clase1_21Mayo-AbrahamZamudio.zip" download>Script 1</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Sesión 2
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <a href="Archivos/Clase2_23Mayo_AbrahamZamudio.zip" download>Script 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    Sesión 3
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <a href="Archivos/Clase3_28Mayo-AbrahamZamudio (1).zip" download>Script 3</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                    aria-controls="flush-collapseFive">
+                                    Sesión 4
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <a href="Archivos/Clase4_30Mayo-AbrahamZamudio.zip" download>Script 4</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                    aria-controls="flush-collapseSix">
+                                    Sesión 5
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <a href="Archivos/Clase5_4Junio[UltimaClase]-AbrahamZamudio.zip" download>Script
+                                        5</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="anuncios" role="tabpanel" aria-labelledby="anuncios-tab">
+                    <h3>Anuncios</h3>
+                    <p>No hay anuncios nuevos.</p>
+                </div>
+                <div class="tab-pane fade" id="valoracion" role="tabpanel" aria-labelledby="valoracion-tab">
+                    <h3>Valoración</h3>
+                    <form>
+                        <p class="calificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                        </p>
+
+                        <div class="comentario">
+                            <label for="comentario">Tu comentario: </label>
+                            <textarea id="comentario" name="comentario" rows="4" cols="50"
+                                placeholder="Escribe tu comentario aquí..."></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="bg-light text-dark text-center text-lg-start mt-3">
+        <div class="container p-4">
+            <div class="row">
+                <!-- Sobre Edutech -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase border-bottom pb-2 text-primary">Sobre EduTech</h5>
+                    <p>
+                        Edutech es una plataforma de aprendizaje en línea, orientado a en brindar la mejor enseñanza a
+                        sus estudiantes con el uso de tecnologías actuales.
+                    </p>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase border-bottom pb-2 text-primary">Síguenos</h5>
+                    <ul class="list-unstyled d-flex justify-content-center mt-3">
+                        <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
+                    </ul>
+                </div>
+                <!-- Importante -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase border-bottom pb-2 text-primary">Importante</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark text-decoration-none">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Ayuda y asistencia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 text-dark" style="opacity: 0.2;">
+            <!--Derechos-->
+            <div class="text-center p-3 text-dark mt-3">
+                <p class="mb-0">&copy; 2024 Nutripoint - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarVideo(videoUrl) {
+            var videoFrame = document.getElementById('videoFrame');
+            videoFrame.src = videoUrl;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
