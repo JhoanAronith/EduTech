@@ -43,6 +43,10 @@ public class AlumnoController {
         return "/admin/usuarios";
     }
 
-    
+    @GetMapping("/admin-edutech/usuarios/eliminar/{id}")
+    public String eliminarAlumno(@PathVariable Integer id) {
+        alumnoService.delete(id);
+        return "redirect:/admin-edutech/usuarios";
+    }
 
 }

@@ -37,6 +37,13 @@ public class AdministradorController {
         adminService.delete(id);
         return "redirect:/admin-edutech/administradores";
     }
+    
+    @PostMapping("/actualizarAdministrador")
+    public String actualizarAdmin(@ModelAttribute("admin") Administrador admin, Model modelo) {
+        adminService.update(admin);
+        return "redirect:/admin-edutech/administradores";
+    }
+    
     //Validaciones
     //    @PostMapping("/guardarAdministrador")
     //    public String guardarAdm(@Valid @ModelAttribute("administrador") Administrador admin, BindingResult result, Model modelo) {

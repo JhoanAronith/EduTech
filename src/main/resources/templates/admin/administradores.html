@@ -92,19 +92,19 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="formEditarAdmin">
-                            <input type="hidden" id="editarId">
+                        <form role="form" th:action="@{/actualizarAdministrador}" th:object="${admin}" method="POST">
+                            <input type="hidden" th:field="*{id_administrador}" id="editarId">
                             <div class="mb-3">
                                 <label for="editarNombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="editarNombre">
+                                <input type="text" th:field="*{nombre}" class="form-control" id="editarNombre" required>
                             </div>
                             <div class="mb-3">
                                 <label for="editarCorreo" class="form-label">Correo</label>
-                                <input type="email" class="form-control" id="editarCorreo">
+                                <input type="email" th:field="*{email}" class="form-control" id="editarCorreo" required>
                             </div>
                             <div class="mb-3">
                                 <label for="editarContrasena" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="editarContrasena">
+                                <input type="password" th:field="*{contrasena}" class="form-control" id="editarContrasena" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar cambios</button>
                         </form>
@@ -113,8 +113,8 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 </html>
