@@ -2,6 +2,7 @@ package com.Edutech.Modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,13 +33,19 @@ public class Curso {
     @Size(max = 50)
     @Column(nullable = false)
     private String nivel;
+    
+    @Column(nullable = false)
+    private Integer cantidadModulos;
+    
+    @Column(nullable = false)
+    private String enlaceExamen;
 
     @ManyToOne
     @JoinColumn(name = "certificacion_id")
     private Certificacion certificacion;
 
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
-    private List<Modulo> modulos;
+    @OneToMany(mappedBy = "curso", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Modulo> modulos = new ArrayList<>();
 
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
     private List<Examen> examenes;
@@ -97,6 +104,22 @@ public class Curso {
         this.nivel = nivel;
     }
 
+    public Integer getCantidadModulos() {
+        return cantidadModulos;
+    }
+
+    public void setCantidadModulos(Integer cantidadModulos) {
+        this.cantidadModulos = cantidadModulos;
+    }
+
+    public String getEnlaceExamen() {
+        return enlaceExamen;
+    }
+
+    public void setEnlaceExamen(String enlaceExamen) {
+        this.enlaceExamen = enlaceExamen;
+    }
+    
     public Certificacion getCertificacion() {
         return certificacion;
     }
@@ -127,8 +150,5 @@ public class Curso {
 
     public void setRegistros(List<RegistroCurso> registros) {
         this.registros = registros;
-    }
-    
-    
-    
+    } 
 }

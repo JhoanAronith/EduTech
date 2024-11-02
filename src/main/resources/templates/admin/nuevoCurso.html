@@ -1,12 +1,141 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     </head>
     <body>
-        <div>TODO write content</div>
+        <header>
+            <nav class="nav bg-primary p-3">
+                <div>
+                    <h3 class="text-light">Creación de cursos</h3>
+                </div>
+                <div class="d-flex ms-auto">
+                    <a href="/admin-edutech" class="btn btn-light mx-6">Inicio</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h3 class="card-text">Lista de Alumnos</h3>
+            <p class="card-text">En esta sección puede visualizar los cursos en donde un alumno está inscrito, además de
+                las certificaciones obtenidas.</p>
+            <hr>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trackerModal1" href="/nuevo">
+                                    <i class="fa fa-plus"></i> Agregar Curso
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <div class="modal fade" id="trackerModal1" tabindex="-1" aria-labelledby="nuevoProyecto" aria-hidden="true">
+                    <div class="modal-dialog" style="min-width: 75%;">
+                        <!--Con el min-width manejo el ancho del modal -->
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="nuevoCurso">Nuevo Curso</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+
+                            <!--Modal para crear curso-->
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form th:action="@{/guardar}" th:object="${curso}" method="post">
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label>Titulo del curso:</label>
+                                                <input type="text" name="titulo" th:field="*{titulo}" class="form-control" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Duración</label>
+                                                <input type="number" name="duracion" th:field="*{duracion}" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label>Descripción</label>
+                                                <input type="text" name="descripcion" th:field="*{descripcion}" class="form-control" required>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Categoria</label>
+                                                <input type="text" name="categoria" th:field="*{categoria}" class="form-control" required>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Nivel del curso:</label>
+                                                <select class="form-control" name="nivel" th:field="*{nivel}">
+                                                    <option value="Básico">Básico</option>
+                                                    <option value="Intermedio">Intermedio</option>
+                                                    <option value="Avanzado">Avanzado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-2">
+                                                <label>Cantidad de módulos:</label>
+                                                <input type="number" id="course-modules" name="cantidadModulos" th:field="*{cantidadModulos}" class="form-control" min="1" onchange="generateModuleFields()">
+                                            </div>
+                                        </div>
+
+                                        <div id="modules-container" class="row"></div>
+
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label>Enlace al examen: </label>
+                                                <input type="url" name="enlaceExamen" th:field="*{enlaceExamen}" class="form-control" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Certificado: </label>
+                                                <select name="certificacion.id_certificacion" th:field="*{certificacion.id_certificacion}" class="form-control">
+                                                    <option value="" disabled selected>Seleccione una certificación</option>
+                                                    <option th:each="certificacion : ${certificaciones}" th:value="${certificacion.id_certificacion}" th:text="${certificacion.nombre}"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <button class="btn btn-success">Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function generateModuleFields() {
+                const modulesContainer = document.getElementById('modules-container');
+                modulesContainer.innerHTML = ''; // Limpia el contenedor de módulos anteriores
+                const moduleCount = document.getElementById('course-modules').value;
+                for (let i = 0; i < moduleCount; i++) {
+                const moduleDiv = document.createElement('div');
+                moduleDiv.classList.add('form-group', 'col-md-6'); // Ajusta el tamaño si es necesario
+                moduleDiv.innerHTML = `
+                   <label for="module-${i}-title">Título del Módulo ${i+1}:</label>
+                   <input type="text" class="form-control" id="module-${i}-title" name="tituloModulos${i}" required>
+                   <label for="module-${i}-materials">Materiales del Módulo ${i+1}:</label>
+                   <input type="file" class="form-control" id="module-${i}-materials" name="archivoZIP${i}" multiple>
+                   <label for="module-${i}-videoLink">Video del módulo ${i+1}:</label>
+                   <input type="text" class="form-control" id="module-${i}-videoLink" name="videoLink${i}">
+               `;
+                modulesContainer.appendChild(moduleDiv);
+                }
+                }
+            </script>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     </body>
 </html>

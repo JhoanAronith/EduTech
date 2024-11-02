@@ -6,32 +6,33 @@ package com.Edutech.Servicio;
 
 import com.Edutech.Modelo.Curso;
 import com.Edutech.dao.CursoRepositorio;
-import com.app_PracticeModal.entities.Curso;
-import com.app_PracticeModal.repository.CursoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class CursoServicio {
-    
+
     @Autowired
     private CursoRepositorio cursoRepositorio;
 
-    public List<Curso> listAll(String palabraClave){
-        if(palabraClave != null){
-            return cursoRepositorio.findAll(palabraClave);
+    public List<Curso> listAll(String palabraClave, String orden) {
+        Sort sort = "desc".equalsIgnoreCase(orden) ? Sort.by(Sort.Direction.DESC, "titulo") : Sort.by(Sort.Direction.ASC, "titulo");
+
+        if (palabraClave != null && !palabraClave.isEmpty()) {
+            return cursoRepositorio.findByTituloContaining(palabraClave, sort);
         }
-        return cursoRepositorio.findAll();
+        return cursoRepositorio.findAll(sort);
     }
 
-    public void save(Curso curso){
-        cursoRepositorio.save(curso);
+    public Curso save(Curso curso) {
+        return cursoRepositorio.save(curso);
     }
 
-    public Curso get(Long id){
+    public Curso get(Long id) {
         return cursoRepositorio.findById(id).get();
     }
 
