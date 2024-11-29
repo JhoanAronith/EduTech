@@ -37,5 +37,5 @@ public class AlumnoServiceImpl implements AlumnoService{
     public void delete(int id_alumno) {
         alumnoDAO.delete(id_alumno);
     }
-    
+
 }

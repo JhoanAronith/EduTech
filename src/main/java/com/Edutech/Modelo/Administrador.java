@@ -61,7 +61,8 @@ public class Administrador {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    
-    
+
+
+
 }
+

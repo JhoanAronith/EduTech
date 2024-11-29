@@ -57,6 +57,6 @@ public class Certificacion {
     public void setCursos(List<Curso> cursos) {
         this.cursos = cursos;
     }
-    
-    
+
+
 }

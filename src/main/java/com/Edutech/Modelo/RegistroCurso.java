@@ -57,7 +57,7 @@ public class RegistroCurso {
     public void setFecha_inscripcion(Date fecha_inscripcion) {
         this.fecha_inscripcion = fecha_inscripcion;
     }
-    
-    
-    
+
+
+
 }

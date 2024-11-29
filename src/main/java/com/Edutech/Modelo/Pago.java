@@ -57,7 +57,7 @@ public class Pago {
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }
-    
-    
-    
+
+
+
 }

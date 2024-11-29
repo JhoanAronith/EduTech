@@ -1,146 +1,141 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edutech - Pago</title>
-        <!--Link Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!--Link Font Awesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <!--Link CSS-->
-        <link rel="stylesheet" href="css/pago-membresia.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edutech - Pago</title>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Link Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="css/pago-membresia.css">
+</head>
 
-    <body>
+<body>
 
-        <!--Header-->
-        <header>
-            <nav class="navbar navbar-light navbar-expand-lg bg-light shadow-sm">
-                <div class="container">
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="inicio-edutech">
-                        <img src="images/logo-header-edutech.png" alt="Logo" height="50">
-                    </a>
-                    <!-- Contenido con el botón alineado a la derecha -->
-                    <div class="d-flex ms-auto" id="navbarContent">
-                        <a class="btn btn-outline-primary" href="login-edutech">Iniciar Sesión</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- Main -->
-        <main>
-            <div class="container mb-3 mt-3">
-                <h3 class="text-center text-success">Haz creado una nueva cuenta</h3>
-                <p class="text-center">Ahora procede a realizar el pago para acceder a todos los cursos</p>
+<!--Header-->
+<header>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="inicio-edutech">
+                <img src="images/logo-header-edutech.png" alt="Logo" height="50">
+            </a>
+            <!-- Contenido con el botón alineado a la derecha -->
+            <div class="d-flex ms-auto" id="navbarContent">
+                <a class="btn btn-outline-primary" href="login-edutech">Iniciar Sesión</a>
             </div>
-            <hr>
-            <div class="container d-flex justify-content-center align-items-center vh-75 mt-5">
-                <div class="card p-4 shadow-lg" style="max-width: 800px; width: 100%;">
-                    <h3 class="text-center mb-4">Formulario de Pago</h3>
-                    <div class="row">
-                        <!-- Formulario de Pago -->
-                        <div class="col-md-6">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="cardNumber" class="form-label">Número de Tarjeta</label>
-                                    <input type="text" class="form-control" id="cardNumber"
-                                           placeholder="Ingrese el número de tarjeta" required>
-                                </div>
+        </div>
+    </nav>
+</header>
 
-                                <div class="mb-3">
-                                    <label for="cardholderName" class="form-label">Nombre del Titular</label>
-                                    <input type="text" class="form-control" id="cardholderName"
-                                           placeholder="Nombre del titular" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="expirationDate" class="form-label">Fecha de Expiración</label>
-                                    <input type="text" class="form-control" id="expirationDate" placeholder="MM/AA"
-                                           required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cvv" placeholder="Código de seguridad"
-                                           required>
-                                </div>
-
-                                <div class="d-grid">
-                                    <a href="/perfil-edutech" class="btn btn-primary">Realizar Pago</a>
-                                </div>
-                            </form>
-                            <div class="text-center mt-3">
-                                <a href="#" class="text-decoration-none">¿Tienes dudas? Contáctanos</a>
-                            </div>
+<!-- Main -->
+<main>
+    <div class="container d-flex justify-content-center align-items-center vh-75 mt-5">
+        <div class="card p-4 shadow-lg" style="max-width: 800px; width: 100%;">
+            <h3 class="text-center mb-4">Formulario de Pago</h3>
+            <div class="row">
+                <!-- Formulario de Pago -->
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                            <input type="text" class="form-control" id="cardNumber"
+                                   placeholder="Ingrese el número de tarjeta" required>
                         </div>
 
-                        <!-- Resumen de Compra -->
-                        <div class="col-md-6">
-                            <h5 class="mb-3">Resumen de Compra</h5>
-                            <div class="border p-3 rounded">
-                                <p><strong>Curso:</strong> Plataforma Edutech</p>
-                                <p><strong>Precio:</strong> 99.90 S/</p>
-                                <p><strong>Total:</strong> 99.90 S/</p>
-                            </div>
+                        <div class="mb-3">
+                            <label for="cardholderName" class="form-label">Nombre del Titular</label>
+                            <input type="text" class="form-control" id="cardholderName"
+                                   placeholder="Nombre del titular" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="expirationDate" class="form-label">Fecha de Expiración</label>
+                            <input type="text" class="form-control" id="expirationDate" placeholder="MM/AA"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" placeholder="Código de seguridad"
+                                   required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Realizar Pago</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">¿Tienes dudas? Contáctanos</a>
+                    </div>
+                </div>
+
+                <!-- Resumen de Compra -->
+                <div class="col-md-6">
+                    <h5 class="mb-3">Resumen de Compra</h5>
+                    <div class="border p-3 rounded">
+                        <p><strong>Curso:</strong> Plataforma Edutech</p>
+                        <p><strong>Precio:</strong> 99.90 S/</p>
+                        <p><strong>Total:</strong> 99.90 S/</p>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </div>
+</main>
 
 
-        <!--Footer-->
-        <footer class="bg-light text-dark text-center text-lg-start mt-5">
-            <div class="container p-4">
-                <div class="row">
-                    <!-- Sobre Edutech -->
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase border-bottom pb-2 text-primary">Sobre EduTech</h5>
-                        <p>
-                            Edutech es una plataforma de aprendizaje en línea, orientado a en brindar la mejor enseñanza a
-                            sus estudiantes con el uso de tecnologías actuales.
-                        </p>
-                    </div>
-                    <!-- Redes Sociales -->
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase border-bottom pb-2 text-primary">Síguenos</h5>
-                        <ul class="list-unstyled d-flex justify-content-center mt-3">
-                            <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
-                            <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
-                            <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
-                            <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- Importante -->
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase border-bottom pb-2 text-primary">Importante</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-dark text-decoration-none">Términos y Condiciones</a></li>
-                            <li><a href="#" class="text-dark text-decoration-none">Política de Privacidad</a></li>
-                            <li><a href="#" class="text-dark text-decoration-none">Ayuda y asistencia</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr class="my-4 text-dark" style="opacity: 0.2;">
-                <!--Derechos-->
-                <div class="text-center p-3 text-dark mt-3">
-                    <p class="mb-0">&copy; 2024 Edutech - Todos los derechos reservados.</p>
-                </div>
+<!--Footer-->
+<footer class="bg-light text-dark text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <!-- Sobre Edutech -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase border-bottom pb-2 text-primary">Sobre EduTech</h5>
+                <p>
+                    Edutech es una plataforma de aprendizaje en línea, orientado a en brindar la mejor enseñanza a
+                    sus estudiantes con el uso de tecnologías actuales.
+                </p>
             </div>
-        </footer>
+            <!-- Redes Sociales -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase border-bottom pb-2 text-primary">Síguenos</h5>
+                <ul class="list-unstyled d-flex justify-content-center mt-3">
+                    <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+                    <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                    <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                    <li><a href="#" class="text-dark me-3"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <!-- Importante -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase border-bottom pb-2 text-primary">Importante</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-dark text-decoration-none">Términos y Condiciones</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Ayuda y asistencia</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 text-dark" style="opacity: 0.2;">
+        <!--Derechos-->
+        <div class="text-center p-3 text-dark mt-3">
+            <p class="mb-0">&copy; 2024 Edutech - Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-                integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
-    </body>
+</body>
 
 </html>

@@ -55,8 +55,9 @@ public class ExamenAlumno {
     public void setNota(BigDecimal nota) {
         this.nota = nota;
     }
-    
-    
-    
+
+
+
 }
+
 

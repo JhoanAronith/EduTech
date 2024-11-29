@@ -16,9 +16,6 @@ public class Modulo {
     @Column(nullable = false)
     private String titulo;
 
-    @Column(name = "archivoZIP")
-    private String archivoZIP;
-
     @Column(name = "videoLink")
     private String videoLink;
 
@@ -45,14 +42,6 @@ public class Modulo {
         this.titulo = titulo;
     }
 
-    public String getArchivoZIP() {
-        return archivoZIP;
-    }
-
-    public void setArchivoZIP(String archivoZIP) {
-        this.archivoZIP = archivoZIP;
-    }
-
     public String getVideoLink() {
         return videoLink;
     }
@@ -68,7 +57,4 @@ public class Modulo {
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
-    
-    
-    
 }
